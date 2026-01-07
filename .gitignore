@@ -1,10 +1,4 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch folder
-.json
-#Cache folder
-_pycache_/
-#run-time
-mantis-tools
-#tools
 scanner
+mantis-tools
+__pycache__/
+*.json
