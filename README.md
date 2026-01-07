@@ -45,10 +45,10 @@ Argumen:
 -e : Mengaktifkan modul eksploitasi otomatis.
 -w : Jumlah worker/thread (default: 100).
 📸 Tampilan Dashboard
+
 ⚠️ Disclaimer
 Penggunaan Mantis-Tools untuk menyerang target tanpa izin tertulis sebelumnya adalah ilegal. Penulis tidak bertanggung jawab atas penyalahgunaan atau kerusakan yang disebabkan oleh program ini. Gunakan hanya untuk tujuan edukasi dan ethical hacking.
+
 📜 Lisensi
 Didistribusikan di bawah MIT License. Lihat file LICENSE untuk informasi lebih lanjut.
 Developed with ❤️ by Mr-C0k1
-chmod +x installer.sh
-./installer.sh
