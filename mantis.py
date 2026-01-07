@@ -206,7 +206,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--nuclei", action="store_true", help="Enable Nuclei vulnerability scanning")
     parser.add_argument("--auto-exploit", action="store_true", help="Enable intrusive Nuclei templates (DANGEROUS - use with permission only)")
     parser.add_argument("-w", "--workers", type=int, default=100, help="Scanner workers (default: 100)")
-    parser.add_argument("-o", "--output", help="Save full report to JSON file")
+    parser.add_argument("-o", "--output", help="Save full report to JSON file (default: mantis-report.json)")
 
     args = parser.parse_args()
 
@@ -214,4 +214,18 @@ if __name__ == "__main__":
         console.print("[red]Error: Specify -t <target> or -f <file>[/red]")
         exit(1)
 
+    # Langsung jalankan, semua report handling ada di dalam class
     MantisMaster(args).start()
+    
+def start(self):
+        # ... (semua kode scanning, processing, collecting self.all_vulns seperti sebelumnya)
+    
+        # Tampilkan ringkasan vulnerabilities (sudah ada)
+
+        # === TAMBAHKAN INI DI AKHIR start() ===
+        from mantis_post_exp import post_exploitation_report
+
+        output_file = self.args.output or "mantis-report.json"
+        post_exploitation_report(self.all_vulns, output_file=output_file)
+
+        console.print(f"\n[bold blue]Scanning completed. Total findings: {len(self.all_vulns)}[/bold blue]")
